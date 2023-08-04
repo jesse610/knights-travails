@@ -45,7 +45,7 @@ class Game {
         let arr = []
         while (currentNode != null)
         {
-            board[currentNode.coord[0]][currentNode.coord[1]] = knight.marker
+            board[currentNode.coord[1]][currentNode.coord[0]] = knight.marker
             arr.push(currentNode.coord)
             currentNode = bfs[currentNode.previous]
         }
@@ -161,5 +161,20 @@ class Game {
 }
 
 let t = new Game
-t.knightMoves([3, 3], [0, 0])
-
+t.knightMoves([0, 0], [7, 7]) 
+// outputs: You made it in 6 moves! Here's your path: 
+// [0,0]
+// [2,1]
+// [1,3]
+// [2,5]
+// [3,7]
+// [5,6]
+// [7,7]
+// ['K', '0', '0', '0', '0', '0', '0', '0']
+// ['0', '0', 'K', '0', '0', '0', '0', '0']
+// ['0', '0', '0', '0', '0', '0', '0', '0']
+// ['0', 'K', '0', '0', '0', '0', '0', '0']
+// ['0', '0', '0', '0', '0', '0', '0', '0']
+// ['0', '0', 'K', '0', '0', '0', '0', '0']
+// ['0', '0', '0', '0', '0', 'K', '0', '0']
+// ['0', '0', '0', 'K', '0', '0', '0', 'K']
